@@ -1,1 +1,1 @@
-# kenerika-devops-demo
+# kanerika-devops-demo
