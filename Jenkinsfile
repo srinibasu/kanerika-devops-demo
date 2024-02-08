@@ -63,7 +63,9 @@ pipeline {
             steps{
                 script{
                     dir('EKS-Cluster-Setup/k8s-manifests'){
-                        sh 'aws eks update-kubeconfig --name my-eks-cluster --region us-east-1'
+                        sh 'aws eks update-kubeconfig --name my-eks-cluster'
+                        sh 'kubectl config current-context'
+                        sh 'env'
                         sh 'kubectl apply -f deployment.yaml'
                         sh 'kubectl apply -f service.yaml'
 
